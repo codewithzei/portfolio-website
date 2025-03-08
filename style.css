@@ -152,6 +152,7 @@ span {
     font-size: 34px;
     font-weight: 600;
     min-width: 200px;
+    position: relative;
 }
 .text-animation span {
     position: relative;
@@ -165,12 +166,11 @@ span {
     content: '';
     background-color: var(--bg-color);
     position: absolute;
-    width: calc(100% + 8px);
+    width: 100%;
     height: 100%;
-    right: -8px;
-    animation: typing 20s steps(14) infinite;
+    right: 0;
+    animation: fade 20s infinite;
 }
-
 @keyframes words {
     0%, 20% {
         content: 'Full Stack Developer';
@@ -188,19 +188,22 @@ span {
         content: 'System Analyst';
     }
 }
-@keyframes typing {
-    10%, 15%,
-    30%, 35%,
-    50%, 55%,
-    70%, 75%,
-    90%, 95% {
-        width: 0;
+
+@keyframes fade {
+    0%, 20% {
+        opacity: 0;
     }
-    5%, 20%,
-    25%, 40%,
-    45%, 60%,
-    65%, 80%, 85% {
-        width: calc(100% + 8px);
+    21%, 40% {
+        opacity: 0;
+    }
+    41%, 60% {
+        opacity: 0;
+    }
+    61%, 80% {
+        opacity: 0;
+    }
+    81%, 100% {
+        opacity: 0;
     }
 }
 .heading {
